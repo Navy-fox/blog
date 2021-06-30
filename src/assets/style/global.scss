@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'SuisseIntl-Regular';
+  src: url('/fonts/SuisseIntl-Regular.woff') format('woff');
+}
+
+$font: SuisseIntl-Regular;
+$font-color-dark: #0F1011;
+$font-color-light: #85878A;
+$font-color-white: #FFFFFF;
+$screen-laptop: 1366px;
+$screen-mobile: 375px;
+
+.title {
+  font-family: $font, sans-serif;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  color: $font-color-dark;
+  @media (max-width: $screen-laptop) {
+    font-size: 40px;
+    letter-spacing: normal;
+  }
+  @media (max-width: $screen-mobile) {
+    font-size: 32px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.subtitle {
+  font-family: $font, sans-serif;
+  font-size: 48px;
+  line-height: 120%;
+  color: $font-color-light;
+  @media (max-width: $screen-laptop) {
+    font-size: 40px;
+  }
+  @media (max-width: $screen-mobile) {
+    font-size: 24px;
+    line-height: 130%;
+  }
+}
+
+.banner-title {
+  font-family: $font, sans-serif;
+  font-size: 48px;
+  line-height: 100%;
+  color: $font-color-white;
+  @media (max-width: $screen-laptop) {
+    font-size: 40px;
+  }
+  @media (max-width: $screen-mobile) {
+    font-size: 24px;
+    line-height: 130%;
+  }
+}
+
+.text {
+  font-family: $font, sans-serif;
+  font-size: 16px;
+  line-height: 130%;
+  color: $font-color-dark;
+  &--light{
+    color: $font-color-light;
+  }
+  &--white{
+    color: $font-color-white;
+  }
+  @media (max-width: $screen-laptop) {
+    font-size: 12px;
+  }
+}

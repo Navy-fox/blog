@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Header class="only-desktop" />
+    <HeaderMobile class="only-mobile" />
     <router-view />
   </div>
 </template>
+
+<script>
+import Header from "@/components/Header";
+import HeaderMobile from "@/components/HeaderMobile";
+export default {
+  components: { Header, HeaderMobile },
+};
+</script>
 
 <style lang="scss">
 #app {

@@ -1,18 +1,19 @@
+@import "system/variables";
 @font-face {
   font-family: 'SuisseIntl-Regular';
   src: url('/fonts/SuisseIntl-Regular.woff') format('woff');
 }
 
-$font: SuisseIntl-Regular;
-$font-color-dark: #0F1011;
-$font-color-light: #85878A;
-$font-color-white: #FFFFFF;
-$screen-laptop: 1366px;
-$screen-square: 1024px;
-$screen-tablet: 768px;
-$screen-mobile: 575px;
-
-
+.only-desktop{
+  @media (max-width: $screen-mobile) {
+    display: none;
+  }
+}
+.only-mobile{
+  @media (min-width: $screen-mobile) {
+    display: none;
+  }
+}
 .title {
   font-family: $font, sans-serif;
   font-size: 48px;

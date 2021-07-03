@@ -1,16 +1,17 @@
 <template>
   <div
     class="banner"
-    :style="`height: ${height}px; background-image: url(${img})`"
+    v-if="banner"
+    :style="`height: ${height}px; background-image: url(${banner.img})`"
   >
     <div class="banner__post">
       <p class="text text--white">4 mins ago</p>
       <div class="banner__author">
-        <img src="/icon/icon30.svg" alt="" />
-        <p class="text text--white">Brooklyn Simmons</p>
+        <img :src="banner.author.img" alt="" />
+        <p class="text text--white">{{ banner.author.name }}</p>
       </div>
     </div>
-    <p class="banner-title">Helping a local business reinvent itself</p>
+    <p class="banner-title">{{ banner.title }}</p>
   </div>
 </template>
 
@@ -18,6 +19,10 @@
 export default {
   name: "Banner",
   props: {
+    banner: {
+      type: Object,
+      required: true,
+    },
     img: {
       type: String,
       default: "/img/banner-car.svg",

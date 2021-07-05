@@ -37,9 +37,11 @@ export default {
     @media (max-width: $screen-laptop) {
       font-size: 20px;
       padding-top: 16px;
+      height: 108px;
     }
     @media (max-width: $screen-mobile) {
       font-size: 16px;
+      height: 74px;
     }
   }
   &__post {
@@ -52,6 +54,9 @@ export default {
     display: flex;
     align-items: center;
     gap: 8px;
+  }
+  @media (max-width: $screen-tablet) {
+    grid-column: span 6 !important;
   }
 }
 </style>

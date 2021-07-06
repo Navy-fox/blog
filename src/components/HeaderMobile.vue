@@ -2,7 +2,7 @@
   <div class="header-mobile">
     <img src="/icon/logo-moon.svg" alt="" />
     <router-link to="" class="text">Search</router-link>
-    <img src="/icon/icons8-menu%202.svg" alt="" />
+    <img src="/icon/icons8-menu%202.svg" alt="" @click="$emit('openMenu')" />
   </div>
 </template>
 
@@ -14,6 +14,9 @@ export default {
 
 <style lang="scss">
 .header-mobile {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
   padding: 20px;
   display: flex;
   align-items: center;

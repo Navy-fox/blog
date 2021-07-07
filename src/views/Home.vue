@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <p class="title">This is our blog</p>
+    <p class="title home__title">This is our blog</p>
     <pagination class="only-mobile" />
     <banner :banner="banners.top" />
     <news-line class="wrapper blog-margin" :news="posts.slice(0, 8)" />
@@ -43,27 +43,29 @@ export default {
     margin-top: 48px;
   }
 }
-.title {
-  margin-top: 53px;
-  margin-bottom: 88px;
-  margin-left: 142px;
-  @media (max-width: $screen-laptop) {
-    margin-bottom: 72px;
+.home {
+  &__title {
+    margin-top: 53px;
+    margin-bottom: 88px;
     margin-left: 142px;
-  }
-  @media (max-width: $screen-square) {
-    margin-top: 48px;
-    margin-left: 96px;
-  }
-  @media (max-width: $screen-tablet) {
-    margin-top: 32px;
-    margin-bottom: 48px;
-    margin-left: 72px;
-  }
-  @media (max-width: $screen-mobile) {
-    margin-top: 34px;
-    margin-bottom: 48px;
-    margin-left: 24px;
+    @media (max-width: $screen-laptop) {
+      margin-bottom: 72px;
+      margin-left: 142px;
+    }
+    @media (max-width: $screen-square) {
+      margin-top: 48px;
+      margin-left: 96px;
+    }
+    @media (max-width: $screen-tablet) {
+      margin-top: 32px;
+      margin-bottom: 48px;
+      margin-left: 72px;
+    }
+    @media (max-width: $screen-mobile) {
+      margin-top: 34px;
+      margin-bottom: 48px;
+      margin-left: 24px;
+    }
   }
 }
 </style>

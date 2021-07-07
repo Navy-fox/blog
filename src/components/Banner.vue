@@ -4,14 +4,14 @@
     v-if="banner"
     :style="`height: ${height}px; background-image: url(${banner.img})`"
   >
-    <div class="banner__post">
+    <div class="banner__post" v-if="!hiddenText">
       <p class="text text--white">4 mins ago</p>
       <div class="banner__author">
         <img :src="banner.author.img" alt="" />
         <p class="text text--white">{{ banner.author.name }}</p>
       </div>
     </div>
-    <p class="banner-title">{{ banner.title }}</p>
+    <p class="banner-title" v-if="!hiddenText">{{ banner.title }}</p>
   </div>
 </template>
 
@@ -19,6 +19,10 @@
 export default {
   name: "Banner",
   props: {
+    hiddenText: {
+      type: Boolean,
+      default: false,
+    },
     banner: {
       type: Object,
       required: true,
@@ -48,7 +52,6 @@ export default {
 .banner {
   padding: 24px 142px;
   width: 100%;
-  //background-image: url("/img/banner-car.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;

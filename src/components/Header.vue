@@ -26,14 +26,17 @@ export default {
   display: flex;
   gap: 24px;
 }
-.header__menu {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
 .header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
   display: flex;
   justify-content: space-between;
   padding: 24px;
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
 }
 </style>

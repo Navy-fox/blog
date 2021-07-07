@@ -1,0 +1,15 @@
+export const TAGS = [
+  "food",
+  "gaming",
+  "parenting",
+  "housing",
+  "tutorial",
+  "business",
+  "python",
+  "books",
+  "crypto",
+  "3dprinting",
+  "mobility",
+  "coding",
+  "product",
+];

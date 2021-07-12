@@ -12,9 +12,9 @@
 
 <script>
 // @ is an alias to /src
-import Banner from "@/components/Banner";
+import Banner from "@/components/global/Banner";
 import Pagination from "@/components/Pagination";
-import NewsLine from "@/components/NewsLine";
+import NewsLine from "@/components/global/NewsLine";
 import { POSTS } from "@/data/POSTS";
 import { BANNERS } from "@/data/BANNERS";
 

@@ -41,11 +41,11 @@
 </template>
 
 <script>
-import NewsLine from "@/components/NewsLine";
+import NewsLine from "@/components/global/NewsLine";
 import { POSTS } from "@/data/POSTS";
 import { BANNERS } from "@/data/BANNERS";
-import Banner from "@/components/Banner";
-import BlogTitle from "@/components/BlogTitle";
+import Banner from "@/components/global/Banner";
+import BlogTitle from "@/components/Blog/BlogTitle";
 import Tags from "@/components/Tags";
 import { TAGS } from "@/data/TAGS";
 export default {

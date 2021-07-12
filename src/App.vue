@@ -3,16 +3,18 @@
     <MenuMobile :show="show" @closeMenu="closeMenu" />
     <Header class="only-desktop" />
     <HeaderMobile class="only-mobile" @openMenu="openMenu" />
+    <search />
     <router-view />
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import HeaderMobile from "@/components/HeaderMobile";
-import MenuMobile from "@/components/MenuMobile";
+import Header from "@/components/global/Header";
+import HeaderMobile from "@/components/global/HeaderMobile";
+import MenuMobile from "@/components/global/MenuMobile";
+import Search from "@/components/ModalSearch/Search";
 export default {
-  components: { MenuMobile, Header, HeaderMobile },
+  components: { Search, MenuMobile, Header, HeaderMobile },
   data() {
     return {
       show: false,

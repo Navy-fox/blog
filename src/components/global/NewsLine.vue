@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import NewsItem from "@/components/NewsItem";
+import NewsItem from "@/components/global/NewsItem";
 export default {
   name: "NewsLine",
   components: { NewsItem },

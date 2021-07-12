@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Banner from "@/components/Banner";
-import NewsLine from "@/components/NewsLine";
+import Banner from "@/components/global/Banner";
+import NewsLine from "@/components/global/NewsLine";
 import PreviewTitle from "@/components/PreviewTitle";
 import { POSTS } from "@/data/POSTS";
 import { BANNERS } from "@/data/BANNERS";

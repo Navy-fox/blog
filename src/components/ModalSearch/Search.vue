@@ -2,16 +2,21 @@
   <div v-if="showSearch" @click.self="closeSearch" class="wrapper search">
     <div class="block-input">
       <p class="text text--light block-input__search">Search</p>
-      <input class="input title" type="text" placeholder="Type something" />
+      <input
+        class="input title"
+        type="text"
+        v-model="textSearch"
+        placeholder="Type something"
+      />
       <p class="text block-input__close" @click="closeSearch">Close</p>
     </div>
-    <div class="block-search">
+    <div class="block-search" v-if="foundedTelecom.length">
       <p class="text text--light">Telecom</p>
-      <table-search :items="itemsTelecom" />
+      <table-search :items="foundedTelecom" />
     </div>
-    <div class="block-search">
+    <div class="block-search" v-if="foundedAuthor.length">
       <p class="text text--light">Author</p>
-      <table-search :items="itemsAuthor"></table-search>
+      <table-search :items="foundedAuthor"></table-search>
     </div>
   </div>
 </template>
@@ -20,6 +25,7 @@
 import TableSearch from "@/components/ModalSearch/TableSearch";
 import { SEARCH_TELECOM } from "@/data/SEARCH_TELECOM";
 import { SEARCH_AUTHOR } from "@/data/SEARCH_AUTHOR";
+
 export default {
   name: "Search",
   components: { TableSearch },
@@ -27,6 +33,7 @@ export default {
     return {
       itemsTelecom: SEARCH_TELECOM,
       itemsAuthor: SEARCH_AUTHOR,
+      textSearch: "",
     };
   },
   props: {
@@ -38,6 +45,31 @@ export default {
   methods: {
     closeSearch() {
       this.$emit("closeSearch");
+    },
+  },
+  computed: {
+    foundedTelecom() {
+      const newItemsTelecom = [];
+      if (this.textSearch) {
+        this.itemsTelecom.forEach((item) => {
+          if (item.text.toLowerCase().includes(this.textSearch)) {
+            newItemsTelecom.push(item);
+          }
+        });
+      }
+
+      return newItemsTelecom;
+    },
+    foundedAuthor() {
+      const newItemsAuthor = [];
+      if (this.textSearch) {
+        this.itemsAuthor.forEach((item) => {
+          if (item.text.toLowerCase().includes(this.textSearch)) {
+            newItemsAuthor.push(item);
+          }
+        });
+      }
+      return newItemsAuthor;
     },
   },
 };
@@ -56,6 +88,7 @@ export default {
   flex-direction: column;
   gap: 48px;
 }
+
 .input {
   border: none;
   outline: 0;
@@ -64,6 +97,7 @@ export default {
   padding: 0;
   width: 100%;
 }
+
 .block-input {
   display: grid;
   grid-template-columns: 12.5% 1fr 10%;
@@ -96,15 +130,18 @@ export default {
       "search . close"
       "input input input";
   }
+
   &__search {
     justify-self: start;
     //margin-top: 8px;
   }
+
   &__close {
     justify-self: end;
     //margin-top: 8px;
   }
 }
+
 .block-search {
   border-top: 0.5px solid #000000;
   display: grid;
@@ -112,6 +149,7 @@ export default {
   @media (max-width: $screen-laptop) {
     grid-template-columns: 9.3% 1fr;
   }
+
   .text {
     padding: 24px 0;
     @media (max-width: $screen-laptop) {
@@ -121,6 +159,7 @@ export default {
       padding-top: 16px;
     }
   }
+
   @media (max-width: $screen-tablet) {
     display: flex;
     flex-direction: column;

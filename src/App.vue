@@ -1,9 +1,14 @@
 <template>
   <div id="app">
     <MenuMobile :show="show" @closeMenu="closeMenu" />
-    <Header class="only-desktop" />
-    <HeaderMobile class="only-mobile" @openMenu="openMenu" />
-    <search />
+    <search :show-search="showSearch" @closeSearch="closeSearch" />
+    <Header class="only-desktop" @openSearch="openSearch" />
+    <HeaderMobile
+      class="only-mobile"
+      @openSearch="openSearch"
+      @openMenu="openMenu"
+      v-if="!show && !showSearch"
+    />
     <router-view />
   </div>
 </template>
@@ -13,11 +18,13 @@ import Header from "@/components/global/Header";
 import HeaderMobile from "@/components/global/HeaderMobile";
 import MenuMobile from "@/components/global/MenuMobile";
 import Search from "@/components/ModalSearch/Search";
+
 export default {
   components: { Search, MenuMobile, Header, HeaderMobile },
   data() {
     return {
       show: false,
+      showSearch: false,
     };
   },
   methods: {
@@ -26,6 +33,12 @@ export default {
     },
     closeMenu() {
       this.show = false;
+    },
+    openSearch() {
+      this.showSearch = true;
+    },
+    closeSearch() {
+      this.showSearch = false;
     },
   },
 };

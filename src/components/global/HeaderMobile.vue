@@ -1,7 +1,7 @@
 <template>
   <div class="header-mobile">
     <img src="/icon/logo-moon.svg" alt="" />
-    <router-link to="" class="text">Search</router-link>
+    <p class="text" @click="$emit('openSearch')">Search</p>
     <img src="/icon/icons8-menu%202.svg" alt="" @click="$emit('openMenu')" />
   </div>
 </template>

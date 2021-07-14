@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="header__menu header__right-menu">
-      <router-link to="" class="text"> Search</router-link>
+      <p class="text" @click="$emit('openSearch')">Search</p>
     </div>
   </div>
 </template>

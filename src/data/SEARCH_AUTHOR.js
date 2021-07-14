@@ -1,1 +1,9 @@
-export const SEARCH_AUTHOR = ["Kathryn Murphy", "Robert Fox", "Annette Black"];
+export const SEARCH_AUTHOR = [
+  {
+    text: "Kathryn Murphy",
+  },
+  {
+    text: "Robert Fox",
+  },
+  { text: "Annette Black" },
+];

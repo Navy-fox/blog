@@ -1,10 +1,5 @@
 <template>
-  <div
-    v-if="show"
-    @click.self="closeMenu"
-    class="mobile-menu"
-    :style="`height: ${height}px`"
-  >
+  <div v-if="show" @click.self="closeMenu" class="mobile-menu">
     <div class="mobile-menu__shadow"></div>
     <div class="mobile-menu__head">
       <img src="/icon/logo-moon-white.svg" alt="" />
@@ -49,11 +44,6 @@
 <script>
 export default {
   name: "MobileMenu",
-  data() {
-    return {
-      height: window.innerHeight,
-    };
-  },
   props: {
     show: {
       type: Boolean,
@@ -74,6 +64,7 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
+  top: 0;
   background: #0f1011;
   &__shadow {
     position: fixed;
